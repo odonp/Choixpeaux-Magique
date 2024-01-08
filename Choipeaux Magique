@@ -1,1 +1,45 @@
+"""
+Choipeaux Magique
 
+
+REGLES:
+
+
+AUTEURS:
+Malik Chouchane 
+Samy Mouktadi Billah
+Odon Prouille
+
+LICENCE:
+
+
+
+VERSION:
+
+
+
+DATE DE DERNIERE REVISION:
+
+
+
+ADRESSE GITHUB: 
+
+
+"""
+
+
+# coding: utf-8
+
+#import des modules
+
+from random import randint
+
+
+#définition des constantes
+
+
+
+#définition des variables 
+
+
+#définition des fonctions dans l'ordre d'utilisation
