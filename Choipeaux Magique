@@ -23,7 +23,7 @@ DATE DE DERNIERE REVISION:
 
 
 ADRESSE GITHUB: 
-
+https://github.com/odonp/Choixpeaux-Magique
 
 """
 
@@ -33,7 +33,7 @@ ADRESSE GITHUB:
 #import des modules
 
 from random import randint
-
+import csv 
 
 #définition des constantes
 
