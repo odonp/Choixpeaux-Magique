@@ -1,3 +1,4 @@
+
 """
 Choixpeaux Magique
 
@@ -27,24 +28,57 @@ https://github.com/odonp/Choixpeaux-Magique
 
 """
 
-
 # coding: utf-8
 
-import csv
+#import des modules
 
+from random import randint
+import csv 
+
+#définition des constantes
+
+profil_tab = \
+    [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
+     {'Courage': 6,'Ambition': 7,'Intelligence': 9,'Good': 7},
+     {'Courage': 3,'Ambition': 8,'Intelligence': 6,'Good': 3},
+     {'Courage': 2,'Ambition': 3,'Intelligence': 7,'Good': 8},
+     {'Courage': 3,'Ambition': 4,'Intelligence': 8,'Good': 8}]
+
+
+#définition des variables 
+
+poudlard_characters = []
+
+
+#définition des fonctions dans l'ordre d'utilisation
+
+
+
+#! La valeur de k sera fixée à 5 par défaut. !#
+
+
+
+'''
+Début du programme 1ere partie
+'''
+
+
+
+#ouvre le csv "Characters"
 with open("Characters.csv", mode='r', encoding='utf-8') as f:
     reader = csv.DictReader(f, delimiter=';')
     characters_tab = [{key : value for key, value in element.items()} for element in reader]
     
 
+#ouvre le csv "Caracteristiques_des_persos"
 with open("Caracteristiques_des_persos.csv", mode='r', encoding='utf-8') as f:
     reader = csv.DictReader(f, delimiter=';')
     caractéristique_tab = [{key : value for key, value in element.items()} for element in reader]
 
 
 
-poudlard_characters = []
 
+# On fait la fusion en rajoutant la maison de chaque personnage
 for poudlard_character in caractéristique_tab:
     for kaggle_character in characters_tab:
         if poudlard_character['Name'] == kaggle_character['Name']:
@@ -55,10 +89,3 @@ print(poudlard_characters)
 
 
 
-
-profil_tab = \
-    [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
-     {'Courage': 6,'Ambition': 7,'Intelligence': 9,'Good': 7},
-     {'Courage': 3,'Ambition': 8,'Intelligence': 6,'Good': 3},
-     {'Courage': 2,'Ambition': 3,'Intelligence': 7,'Good': 8},
-     {'Courage': 3,'Ambition': 4,'Intelligence': 8,'Good': 8}]
