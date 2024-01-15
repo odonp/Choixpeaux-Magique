@@ -89,3 +89,21 @@ print(poudlard_characters)
 
 
 
+
+
+
+def choixpeau_magique(tab_caractere , profil_carateristique):
+    
+    for perso in tab_caractere:
+        difference = 0
+        for caracteristique in profil_carateristique:
+            difference += abs(int(perso[caracteristique]) - profil_carateristique[caracteristique])
+        perso['Difference'] = difference
+    
+    
+    tab_caractere.sort(key= lambda x: x['Difference'])
+    print(tab_caractere)
+    
+
+choixpeau_magique(poudlard_characters, test_tab[0])
+
