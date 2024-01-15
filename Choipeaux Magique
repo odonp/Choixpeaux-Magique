@@ -30,32 +30,35 @@ https://github.com/odonp/Choixpeaux-Magique
 
 # coding: utf-8
 
-#import des modules
+import csv
 
-from random import randint
-import csv 
+with open("Characters.csv", mode='r', encoding='utf-8') as f:
+    reader = csv.DictReader(f, delimiter=';')
+    characters_tab = [{key : value for key, value in element.items()} for element in reader]
+    
 
-#définition des constantes
-
-
-
-#définition des variables 
-
-
-#définition des fonctions dans l'ordre d'utilisation
+with open("Caracteristiques_des_persos.csv", mode='r', encoding='utf-8') as f:
+    reader = csv.DictReader(f, delimiter=';')
+    caractéristique_tab = [{key : value for key, value in element.items()} for element in reader]
 
 
 
+poudlard_characters = []
 
-#! La valeur de k sera fixée à 5 par défaut. !#
+for poudlard_character in caractéristique_tab:
+    for kaggle_character in characters_tab:
+        if poudlard_character['Name'] == kaggle_character['Name']:
+            poudlard_character['House'] = kaggle_character['House']
+            poudlard_characters.append(poudlard_character)
 
-
-
-'''
-Début du programme 1ere partie
-'''
+print(poudlard_characters)
 
 
 
 
-
+profil_tab = \
+    [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
+     {'Courage': 6,'Ambition': 7,'Intelligence': 9,'Good': 7},
+     {'Courage': 3,'Ambition': 8,'Intelligence': 6,'Good': 3},
+     {'Courage': 2,'Ambition': 3,'Intelligence': 7,'Good': 8},
+     {'Courage': 3,'Ambition': 4,'Intelligence': 8,'Good': 8}]
