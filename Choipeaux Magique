@@ -32,10 +32,26 @@ https://github.com/odonp/Choixpeaux-Magique
 
 #import des modules
 
-from random import randint
-import csv 
+import csv
+from math import sqrt
 
-#définition des constantes
+with open("Characters.csv", mode='r', encoding='utf-8') as f:
+    reader = csv.DictReader(f, delimiter=';')
+    characters_tab = [{key : value for key, value in element.items()} for element in reader]
+    
+
+with open("Caracteristiques_des_persos.csv", mode='r', encoding='utf-8') as f:
+    reader = csv.DictReader(f, delimiter=';')
+    caractéristique_tab = [{key : value for key, value in element.items()} for element in reader]
+
+
+
+poudlard_characters = []
+
+for poudlard_character in caractéristique_tab:
+    for kaggle_character in characters_tab:
+        if poudlard_character['Name'] == kaggle_character['Name']:
+            poudlard_character['House'] = kaggle_character['House']#définition des constantes
 
 profil_tab = \
     [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
@@ -106,4 +122,54 @@ def choixpeau_magique(tab_caractere , profil_carateristique):
     
 
 choixpeau_magique(poudlard_characters, test_tab[0])
+            poudlard_characters.append(poudlard_character)
 
+
+
+
+
+
+test_tab = \
+    [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
+     {'Courage': 6,'Ambition': 7,'Intelligence': 9,'Good': 7},
+     {'Courage': 3,'Ambition': 8,'Intelligence': 6,'Good': 3},
+     {'Courage': 2,'Ambition': 3,'Intelligence': 7,'Good': 8},
+     {'Courage': 3,'Ambition': 4,'Intelligence': 8,'Good': 8}]
+
+
+
+    
+    
+   
+    
+    
+
+def k_plus_proche_voisin(tab_caractere , profil_carateristique):
+    
+    k = 5
+    
+    for perso in tab_caractere:
+        distance = 0
+        somme_carré = 0
+        for caracteristique in profil_carateristique:
+            somme_carré += abs(int(perso[caracteristique]) - profil_carateristique[caracteristique]) ** 2
+        distance = sqrt(somme_carré)
+        
+        perso['Distance'] = distance
+    
+    
+    tab_caractere.sort(key= lambda x: x['Distance'])
+    tab_k_plus_proche_voisin = tab_caractere[:k]
+    
+    return tab_k_plus_proche_voisin
+    
+
+print(k_plus_proche_voisin(poudlard_characters, test_tab[0]))
+
+
+def profil_maison(tab_profils_plus_proche):
+    Gryffindor = 0
+    Hufflepuff = 0
+    Slytherin
+    for personnage in tab_profils_plus_proche_plus_proche:
+        
