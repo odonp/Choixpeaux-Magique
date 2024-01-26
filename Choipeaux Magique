@@ -60,7 +60,7 @@ from math import sqrt
 
 #définition des constantes
 
-poudlard_characters = []
+
 
 profil_tab = \
     [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
@@ -109,7 +109,8 @@ for poudlard_character in caractéristique_tab:
             poudlard_character['House'] = kaggle_character['House']
             poudlard_characters.append(poudlard_character)
 
-print(poudlard_characters)
+
+                                #print(poudlard_characters)
 
 
 
@@ -123,7 +124,7 @@ def choixpeau_magique(tab_caractere , profil_carateristique):
     
     
     tab_caractere.sort(key= lambda x: x['Difference'])
-    print(tab_caractere)
+    return tab_caractere
     
 '''
 choixpeau_magique(poudlard_characters, test_tab[0])
@@ -163,13 +164,18 @@ def k_plus_proche_voisin(tab_caractere , profil_carateristique):
     
     return tab_k_plus_proche_voisin
     
+def maison_profil(perso_proches):
+    dico_maison = {'Gryffindor' : 0, 'Ravenclaw' : 0, 'Slytherin' : 0, 'Hufflepuff' : 0}
+    for perso in persos_proches:
+        dico_maison[perso['House']] += 1
 
-print(k_plus_proche_voisin(poudlard_characters, test_tab[0]))
 
-'''
-def profil_maison(tab_profils_plus_proche):
-    Gryffindor = 0
-    Hufflepuff = 0
-    Slytherin
-    for personnage in tab_profils_plus_proche_plus_proche:
-'''
+for profil_inconnu in profil_tab:
+    dico_k_v = k_plus_proche_voisin(poudlard_characters, profil_inconnu)
+    print(f"Les plus proche voisins du profil inconnu ayant pour caractéristiques {profil_inconnu} sont :")
+    #print(dico_k_v)
+    for perso in dico_k_v :
+        print(f" {perso['Name']} de la maison {perso['House']} est a une distance de {perso['Distance']}\n")    
+    
+    #print(f"Le profil inconnu est donc assigné à la maison {}")
+    print("\n\n")
