@@ -1,4 +1,3 @@
-
 """
 Choixpeaux Magique
 
@@ -28,6 +27,28 @@ https://github.com/odonp/Choixpeaux-Magique
 
 """
 
+
+'''
+Info pour les dev du groupe 
+
+  Affichage attendu sous forme :
+  
+  Les voisins du profil inconnu ayant pour caractéristiques {......}
+  -TRUC de la maison machin est a une distance de ...
+  -TRUC de la maison machin est a une distance de ...
+  -TRUC de la maison machin est a une distance de ...
+  -TRUC de la maison machin est a une distance de ...
+  -TRUC de la maison machin est a une distance de ...
+  
+  Le profil inconnu ayant les caractéristiques {......} est donc assigné à la maison machin
+  
+  
+  
+  Mettre des couleurs si possible, c'est plus visuel
+'''
+
+
+
 # coding: utf-8
 
 #import des modules
@@ -35,23 +56,11 @@ https://github.com/odonp/Choixpeaux-Magique
 import csv
 from math import sqrt
 
-with open("Characters.csv", mode='r', encoding='utf-8') as f:
-    reader = csv.DictReader(f, delimiter=';')
-    characters_tab = [{key : value for key, value in element.items()} for element in reader]
-    
-
-with open("Caracteristiques_des_persos.csv", mode='r', encoding='utf-8') as f:
-    reader = csv.DictReader(f, delimiter=';')
-    caractéristique_tab = [{key : value for key, value in element.items()} for element in reader]
 
 
+#définition des constantes
 
 poudlard_characters = []
-
-for poudlard_character in caractéristique_tab:
-    for kaggle_character in characters_tab:
-        if poudlard_character['Name'] == kaggle_character['Name']:
-            poudlard_character['House'] = kaggle_character['House']#définition des constantes
 
 profil_tab = \
     [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
@@ -79,7 +88,6 @@ Début du programme 1ere partie
 '''
 
 
-
 #ouvre le csv "Characters"
 with open("Characters.csv", mode='r', encoding='utf-8') as f:
     reader = csv.DictReader(f, delimiter=';')
@@ -105,9 +113,6 @@ print(poudlard_characters)
 
 
 
-
-
-
 def choixpeau_magique(tab_caractere , profil_carateristique):
     
     for perso in tab_caractere:
@@ -120,11 +125,11 @@ def choixpeau_magique(tab_caractere , profil_carateristique):
     tab_caractere.sort(key= lambda x: x['Difference'])
     print(tab_caractere)
     
-
+'''
 choixpeau_magique(poudlard_characters, test_tab[0])
-            poudlard_characters.append(poudlard_character)
+poudlard_characters.append(poudlard_character)
 
-
+'''
 
 
 
@@ -137,12 +142,7 @@ test_tab = \
      {'Courage': 3,'Ambition': 4,'Intelligence': 8,'Good': 8}]
 
 
-
-    
-    
-   
-    
-    
+ 
 
 def k_plus_proche_voisin(tab_caractere , profil_carateristique):
     
@@ -166,10 +166,10 @@ def k_plus_proche_voisin(tab_caractere , profil_carateristique):
 
 print(k_plus_proche_voisin(poudlard_characters, test_tab[0]))
 
-
+'''
 def profil_maison(tab_profils_plus_proche):
     Gryffindor = 0
     Hufflepuff = 0
     Slytherin
     for personnage in tab_profils_plus_proche_plus_proche:
-        
+'''
