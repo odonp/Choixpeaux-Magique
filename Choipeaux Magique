@@ -47,7 +47,7 @@ from math import sqrt
 
 
 
-profil_tab = \
+profils_tab = \
     [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
      {'Courage': 6,'Ambition': 7,'Intelligence': 9,'Good': 7},
      {'Courage': 3,'Ambition': 8,'Intelligence': 6,'Good': 3},
