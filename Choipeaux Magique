@@ -29,21 +29,6 @@ https://github.com/odonp/Choixpeaux-Magique
 
 
 '''
-Info pour les dev du groupe 
-
-  Affichage attendu sous forme :
-  
-  Les voisins du profil inconnu ayant pour caractéristiques {......}
-  -TRUC de la maison machin est a une distance de ...
-  -TRUC de la maison machin est a une distance de ...
-  -TRUC de la maison machin est a une distance de ...
-  -TRUC de la maison machin est a une distance de ...
-  -TRUC de la maison machin est a une distance de ...
-  
-  Le profil inconnu ayant les caractéristiques {......} est donc assigné à la maison machin
-  
-  
-  
   Mettre des couleurs si possible, c'est plus visuel
 '''
 
@@ -101,16 +86,12 @@ with open("Caracteristiques_des_persos.csv", mode='r', encoding='utf-8') as f:
 
 
 
-
 # On fait la fusion en rajoutant la maison de chaque personnage
 for poudlard_character in caractéristique_tab:
     for kaggle_character in characters_tab:
         if poudlard_character['Name'] == kaggle_character['Name']:
             poudlard_character['House'] = kaggle_character['House']
             poudlard_characters.append(poudlard_character)
-
-
-                                #print(poudlard_characters)
 
 
 
@@ -125,22 +106,6 @@ def choixpeau_magique(tab_caractere , profil_carateristique):
     
     tab_caractere.sort(key= lambda x: x['Difference'])
     return tab_caractere
-    
-'''
-choixpeau_magique(poudlard_characters, test_tab[0])
-poudlard_characters.append(poudlard_character)
-
-'''
-
-
-
-
-test_tab = \
-    [{'Courage': 9,'Ambition': 2,'Intelligence': 8,'Good': 9},
-     {'Courage': 6,'Ambition': 7,'Intelligence': 9,'Good': 7},
-     {'Courage': 3,'Ambition': 8,'Intelligence': 6,'Good': 3},
-     {'Courage': 2,'Ambition': 3,'Intelligence': 7,'Good': 8},
-     {'Courage': 3,'Ambition': 4,'Intelligence': 8,'Good': 8}]
 
 
  
