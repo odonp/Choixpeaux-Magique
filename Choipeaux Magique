@@ -161,7 +161,5 @@ if rep == '1' :
     tab_perso_modifiable['Ambition'] = ambition
     tab_perso_modifiable['Intelligence'] = intelligence
     tab_perso_modifiable['Good'] = bonté
-    print("\n")
+    print(f"\nRésumé : {tab_perso_modifiable}\n")
     affichage(tab_perso_modifiable, poudlard_characters)
-
-    
