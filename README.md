@@ -15,3 +15,5 @@ Info pour les dev du groupe
 
   Ce serait bien de changer les noms de variables type "kaggles" qui sont issus d'un copié collé
 
+  l'assertion pour le bonus est trop longue 
+
