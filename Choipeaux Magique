@@ -26,9 +26,6 @@ https://github.com/odonp/Choixpeaux-Magique
 """
 
 
-'''
-  Mettre des couleurs si possible, c'est plus visuel
-'''
 
 
 # coding: utf-8
@@ -60,9 +57,13 @@ def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
     '''
     Renvoie la table des k plus proche
     
-    Entrée : une table contenant les dictionnaire des personnage du monde harry potter avec les caractéristiques
+    Entrée : Une table contenant des dictionnaires. Chaque dictionnaire correspond à un personnages 
+    d’Harry Potter avec ses 4 caractéristiques et sa maison. 
+    Et Une table contenant un/des dictionnaire(s) avec 4 clés qui sont des caractéristiques 
+    (Courage, Ambition, Intelligence, Good) avec en valeur un entier de 1 à 10.
     
-    Sortie :
+    Sortie : Une table avec le nombre de dictionnaire correspondant au nombre de k plus proche voisin, avec leurs caractéristiques,
+    leur maison, et leur distance par rapport au profil recherché 
     '''
     
     
