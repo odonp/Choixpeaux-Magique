@@ -1,11 +1,6 @@
 Bonjour,
 Groupe de Malik, Odon et Samy pour le mini projet choixpeau magique à rendre pour 2 février.
 
-Info pour les dev du groupe 
-
-le string de la 2e fonction
-  Le pseudo-code
-
 
   2e partie :
   1seule page internet dynamique -> pas de changement de page/url    -> des choses doivent donc disparaitre et apparaitre
