@@ -109,7 +109,7 @@ def affichage (profils, caracteres) :
     for persos in k_plus_proche_voisin(caracteres, profils):
         print(f" - \033[92m{persos['Name']}\033[0m de la maison \033[92m{persos['House']}\033[0m est à une distance de \033[92m{persos['Distance']}\033[0m")
     maison = maison_profil(k_plus_proche_voisin(caracteres, profils))
-    print(f"\nLa maison du profil est \033[92m{maison[0][0]}\033[0m")
+    print(f"\nLa maison du profil est donc \033[92m{maison[0][0]}\033[0m")
 
 
 #! La valeur de k sera fixée à 5 par défaut. !#
@@ -137,9 +137,9 @@ with open("Caracteristiques_des_persos.csv", mode='r', encoding='utf-8') as f:
 
 # On fait la fusion en rajoutant la maison de chaque personnage
 for poudlard_character in caractéristique_tab:
-    for kaggle_character in characters_tab:
-        if poudlard_character['Name'] == kaggle_character['Name']:
-            poudlard_character['House'] = kaggle_character['House']
+    for character_HP in characters_tab:
+        if poudlard_character['Name'] == character_HP['Name']:
+            poudlard_character['House'] = character_HP['House']
             poudlard_characters.append(poudlard_character) 
 
 
