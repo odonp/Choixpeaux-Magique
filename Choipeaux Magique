@@ -56,14 +56,14 @@ poudlard_characters = []
 
 #définition des fonctions dans l'ordre d'utilisation
 
-def k_plus_proche_voisin(tab_caracteres, profil_carateristiques):
+def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
     '''
     
     
     Entrée :
     Sortie :
     '''
-    k = 5
+    
     
     for perso in tab_caracteres:
         distance = 0
@@ -100,15 +100,17 @@ def maison_profil(persos_proches ):
 
     return list_maison
 
-def affichage (profils, caracteres) :
+def affichage (profils, caracteres, k) :
     '''
     Affiche dans le terminal les résultats mis en page 
     Entrées : une table et une table/un dico
     Sortie : Des chaines de caractères
     '''
-    for persos in k_plus_proche_voisin(caracteres, profils):
+    
+
+    for persos in k_plus_proche_voisin(caracteres, profils, k):
         print(f" - \033[92m{persos['Name']}\033[0m de la maison \033[92m{persos['House']}\033[0m est à une distance de \033[92m{persos['Distance']}\033[0m")
-    maison = maison_profil(k_plus_proche_voisin(caracteres, profils))
+    maison = maison_profil(k_plus_proche_voisin(caracteres, profils, k))
     print(f"\nLa maison du profil est donc \033[92m{maison[0][0]}\033[0m")
 
 
@@ -143,23 +145,20 @@ for poudlard_character in caractéristique_tab:
             poudlard_characters.append(poudlard_character) 
 
 
+k = int(input("Saisiser un entier k : "))
 for profil in profils_tab:
     print(f"\n\n\n Les 5 personnages les plus proches du profil ayant pour caracteristique {profil} sont :\n")
-    affichage (profil, poudlard_characters)
+    affichage (profil, poudlard_characters, k)
 
 print("\n\n")
 
-rep = input("Voulez-vous entrer les caractéristiques d'un personnage ? Si oui tapez 1")
+rep = input("Voulez-vous entrer les caractéristiques d'un personnage ? Si oui tapez 1 : ")
 if rep == '1' :
     tab_perso_modifiable = {'Courage': 0,'Ambition': 0,'Intelligence': 0,'Good': 0}
-    courage = int(input("Donnez une valeur de 1 à 10 pour la valeur de courage du personnage ")) 
-    ambition = int(input("Donnez une valeur de 1 à 10 pour la valeur d'ambition du personnage "))
-    intelligence = int(input("Donnez une valeur de 1 à 10 pour la valeur d'intelligence du personnage "))
-    bonté = int(input("Donnez une valeur de 1 à 10 pour la valeur de bonté du personnage "))
-    assert courage >= 1 and courage <= 10 and ambition >= 1 and ambition <= 10 and intelligence >= 1 and intelligence <= 10 and bonté >= 1 and bonté <= 10 , "Vous devez rentrer des valeurs comprise dans l'intervalle [1;10]"
-    tab_perso_modifiable['Courage'] = courage
-    tab_perso_modifiable['Ambition'] = ambition
-    tab_perso_modifiable['Intelligence'] = intelligence
-    tab_perso_modifiable['Good'] = bonté
+    tab_perso_modifiable['Courage']  = int(input("Donnez une valeur de 1 à 10 pour la valeur de courage du personnage : ")) 
+    tab_perso_modifiable['Ambition'] = int(input("Donnez une valeur de 1 à 10 pour la valeur d'ambition du personnage : "))
+    tab_perso_modifiable['Intelligence'] = int(input("Donnez une valeur de 1 à 10 pour la valeur d'intelligence du personnage : "))
+    tab_perso_modifiable['Good'] = int(input("Donnez une valeur de 1 à 10 pour la valeur de bonté du personnage : "))
+
     print(f"\nRésumé : {tab_perso_modifiable}\n")
-    affichage(tab_perso_modifiable, poudlard_characters)
+    affichage(tab_perso_modifiable, poudlard_characters, k)
