@@ -3,6 +3,11 @@ Choixpeaux Magique partie 1
 
 
 REGLES:
+Après le lancement du programme, il suffit d'entrer une valeur de k qui determinera 
+le nombre des k plus proche voisins utilisés lors de la recherche. Les résultats pour les profils types 
+s'affiche alors dans la foulée. 
+On vous demandera alors si vous souhaitez entrer manuellement des valeurs pour les 4 caractéristiques. 
+Si oui, après les avoir rentrées, le résultat s'affichera. 
 
 
 AUTEURS:
@@ -14,10 +19,10 @@ LICENCE:
 Pas de licence 
 
 VERSION:
-
+FINALE de la 1ere partie
 
 DATE DE DERNIERE REVISION:
-
+02/02/2024
 
 
 ADRESSE GITHUB: 
@@ -63,7 +68,6 @@ def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
     leur maison, et leur distance par rapport au profil recherché 
     '''
     
-    
     for perso in tab_caracteres:
         distance = 0
         somme_carré = 0
@@ -83,7 +87,7 @@ def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
 
 def maison_profil(persos_proches ):
     '''
-    Renvoie une liste de tuple tier afin d'avoir la maison du profil
+    Renvoie une liste de tuple d'tier afin d'avoir la maison du profil
 
     Entrée : liste de dictionnaire des k plus proche voisin 
     Sortie : liste de tuple contenant la maision et le nombre de personnages des persos proches qui font partie
@@ -100,6 +104,7 @@ def maison_profil(persos_proches ):
 
     return list_maison
 
+
 def affichage (profil, caracteres, k) :
     '''
     Affiche dans le terminal les résultats mise en page 
@@ -114,9 +119,6 @@ def affichage (profil, caracteres, k) :
         print(f" - \033[92m{persos['Name']}\033[0m de la maison \033[92m{persos['House']}\033[0m est à une distance de \033[92m{persos['Distance']}\033[0m")
     maison = maison_profil(k_plus_proche_voisin(caracteres, profil, k))
     print(f"\nLa maison du profil est donc \033[92m{maison[0][0]}\033[0m")
-
-
-#! La valeur de k sera fixée à 5 par défaut. !#
 
 
 
@@ -147,7 +149,7 @@ for poudlard_character in caractéristique_tab:
             poudlard_characters.append(poudlard_character) 
 
 
-k = int(input("Saisiser un entier k : "))
+k = int(input("Saisiser un entier pour k : "))
 for profil in profils_tab:
     print(f"\n\n\n Les 5 personnages les plus proches du profil ayant pour caracteristique {profil} sont :\n")
     affichage (profil, poudlard_characters, k)
