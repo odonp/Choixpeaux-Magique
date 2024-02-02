@@ -25,9 +25,6 @@ https://github.com/odonp/Choixpeaux-Magique
 
 """
 
-
-
-
 # coding: utf-8
 
 #import des modules
@@ -55,7 +52,7 @@ poudlard_characters = []
 
 def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
     '''
-    Renvoie la table des k plus proche
+    Renvoie la table des k plus proche voisins
     
     Entrée : Une table contenant des dictionnaires. Chaque dictionnaire correspond à un personnages 
     d’Harry Potter avec ses 4 caractéristiques et sa maison. 
@@ -71,7 +68,7 @@ def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
         distance = 0
         somme_carré = 0
         for caracteristique in profil_carateristiques:
-            somme_carré += abs(int(perso[caracteristique]) - profil_carateristiques[caracteristique]) ** 2
+            somme_carré += (int(perso[caracteristique]) - profil_carateristiques[caracteristique]) ** 2
         distance = sqrt(somme_carré)
         
         perso['Distance'] = distance
