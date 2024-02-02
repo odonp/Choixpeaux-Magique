@@ -58,9 +58,10 @@ poudlard_characters = []
 
 def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
     '''
+    Renvoie la table des k plus proche
     
+    Entrée : une table contenant les dictionnaire des personnage du monde harry potter avec les caractéristiques
     
-    Entrée :
     Sortie :
     '''
     
@@ -84,10 +85,11 @@ def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
 
 def maison_profil(persos_proches ):
     '''
+    Renvoie une liste de tuple tier afin d'avoir la maison du profil
 
-
-    Entrée : 
-    Sortie : 
+    Entrée : liste de dictionnaire des k plus proche voisin 
+    Sortie : liste de tuple contenant la maision et le nombre de personnages des persos proches qui font partie
+    de la maison
     '''
     dico_maison = {'Gryffindor' : 0, 'Ravenclaw' : 0, 'Slytherin' : 0, 'Hufflepuff' : 0}
     
@@ -100,17 +102,19 @@ def maison_profil(persos_proches ):
 
     return list_maison
 
-def affichage (profils, caracteres, k) :
+def affichage (profil, caracteres, k) :
     '''
-    Affiche dans le terminal les résultats mis en page 
-    Entrées : une table et une table/un dico
+    Affiche dans le terminal les résultats mise en page 
+
+    Entrées : une table contenant les caractéristiques d'un profil, une table des personnage les plus proche du
+    profil et un entier k qui determine le nombre de personnage selectionné
     Sortie : Des chaines de caractères
     '''
     
 
-    for persos in k_plus_proche_voisin(caracteres, profils, k):
+    for persos in k_plus_proche_voisin(caracteres, profil, k):
         print(f" - \033[92m{persos['Name']}\033[0m de la maison \033[92m{persos['House']}\033[0m est à une distance de \033[92m{persos['Distance']}\033[0m")
-    maison = maison_profil(k_plus_proche_voisin(caracteres, profils, k))
+    maison = maison_profil(k_plus_proche_voisin(caracteres, profil, k))
     print(f"\nLa maison du profil est donc \033[92m{maison[0][0]}\033[0m")
 
 
