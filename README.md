@@ -2,8 +2,8 @@ Bonjour,
 Groupe de Malik, Odon et Samy pour le mini projet choixpeau magique à rendre pour le 2 février.
 
 INFO pour les dev du groupe
-  2e partie :
-  1seule page internet dynamique -> pas de changement de page/url    -> des choses doivent donc disparaitre et apparaitre
+2e partie :
+1seule page internet dynamique -> pas de changement de page/url    -> des choses doivent donc disparaitre et apparaitre
 
   Pour déterminer les caractéristiques : poser des questions !Pas orientées vers la caractéristique liée! 
   Ne pas faire "est-ce que tu es courageux..."
