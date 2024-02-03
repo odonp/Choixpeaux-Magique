@@ -1,7 +1,7 @@
 Bonjour,
-Groupe de Malik, Odon et Samy pour le mini projet choixpeau magique à rendre pour 2 février.
+Groupe de Malik, Odon et Samy pour le mini projet choixpeau magique à rendre pour le 2 février.
 
-
+INFO pour les dev du groupe
   2e partie :
   1seule page internet dynamique -> pas de changement de page/url    -> des choses doivent donc disparaitre et apparaitre
 
