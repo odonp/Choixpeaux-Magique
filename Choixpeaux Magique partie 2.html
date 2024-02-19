@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Essai</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Saira Extra Condensed', sans-serif;
+      letter-spacing: 1px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      overflow: hidden; /* Pour empêcher le défilement de la page */
+      position: relative; /* Pour que les éléments positionnés soient relativement positionnés par rapport à cette div */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 66%), url('https://static.wikia.nocookie.net/crossroads/images/8/85/Hogwarts02.jpg/revision/latest/scale-to-width-down/1000?cb=20170506114231&path-prefix=fr');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative; /* Pour que le chapeau soit positionné correctement */
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 1.5rem;
+      color: white;
+      position: relative; /* Pour que le chapeau soit positionné correctement */
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-flex;
+    }
+
+    a {
+      position: relative;
+      padding: 1rem 0 0.5rem;
+      margin: 0 1.5rem;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%) scaleX(0);
+        transform-origin: 50% 50%;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255,255,255,0.8);
+        transition: transform 250ms;
+      }
+
+      &:hover {
+        &::after {
+          transform: translateX(-50%) scaleX(1);
+        }
+      }
+    }
+
+    /* Animation pour déplacer le chapeau */
+    @keyframes moveHat {
+      0% {
+        left: -50px;
+      }
+      50% {
+        left: calc(100% + 50px); /* Déplacer le chapeau complètement hors de la page */
+      }
+      100% {
+        left: -50px; /* Ramener le chapeau au point de départ */
+      }
+    }
+
+    /* Style pour le chapeau */
+    #magicHat {
+      position: absolute;
+      top: 50%;
+      left: -50px; /* Commence à gauche de la page */
+      animation: moveHat 10s linear infinite; /* Animation pour déplacer le chapeau */
+      transform: translateY(-50%); /* Centrer verticalement */
+      height: 100px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Poudlard</a>
+          </li>
+          <li>
+            <a href="#">Le questionnaire</a>
+          </li>
+          <li>
+            <a href="#">Les développeurs</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Chapeau magique -->
+    <img src="https://media.istockphoto.com/id/1217023366/fr/vectoriel/chapeau-magique-de-gryffindor-isol%C3%A9-sur-un-fond-blanc.jpg?s=612x612&w=0&k=20&c=M5m5NaZgF_X5D1efiTfRfVXnN1lmjVo6OqdBMG8UbSU=" alt="Chapeau Magique" id="magicHat">
+  </div>
+</body>
+</html>
