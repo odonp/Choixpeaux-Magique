@@ -22,14 +22,18 @@
       position: relative; /* Pour que les éléments positionnés soient relativement positionnés par rapport à cette div */
     }
 
+
+   
     .container {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      background-image: linear-gradient(to bottom, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 66%), url('https://static.wikia.nocookie.net/crossroads/images/8/85/Hogwarts02.jpg/revision/latest/scale-to-width-down/1000?cb=20170506114231&path-prefix=fr');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-image:('D:\Documents NSI\1ere\Projet NSI\Projet_Choixpeau_magique_Chouchane_MouktadiBillah_Prouille/giphy.gif');
+      background-size:100%;
+      background-repeat: repeat-y;
+      background-attachment: fixed;
+      height:100%;
+      width:100%;
       position: relative; /* Pour que le chapeau soit positionné correctement */
     }
 
@@ -37,7 +41,7 @@
       text-align: center;
       padding: 2rem 0;
       font-size: 1.5rem;
-      color: white;
+      
       position: relative; /* Pour que le chapeau soit positionné correctement */
     }
 
@@ -49,6 +53,8 @@
 
     li {
       display: inline-flex;
+      font-size: 55px;
+
     }
 
     a {
@@ -82,10 +88,10 @@
     /* Animation pour déplacer le chapeau */
     @keyframes moveHat {
       0% {
-        left: -50px;
+        left: -48px;
       }
       50% {
-        left: calc(100% + 50px); /* Déplacer le chapeau complètement hors de la page */
+        left: calc(95%); /* Déplacer le chapeau complètement hors de la page */
       }
       100% {
         left: -50px; /* Ramener le chapeau au point de départ */
@@ -98,7 +104,7 @@
       top: 50%;
       left: -50px; /* Commence à gauche de la page */
       animation: moveHat 10s linear infinite; /* Animation pour déplacer le chapeau */
-      transform: translateY(-50%); /* Centrer verticalement */
+      transform: translateY(-100%); /* Centrer verticalement */
       height: 100px;
       width: auto;
     }
@@ -122,7 +128,7 @@
       </nav>
     </header>
     <!-- Chapeau magique -->
-    <img src="https://media.istockphoto.com/id/1217023366/fr/vectoriel/chapeau-magique-de-gryffindor-isol%C3%A9-sur-un-fond-blanc.jpg?s=612x612&w=0&k=20&c=M5m5NaZgF_X5D1efiTfRfVXnN1lmjVo6OqdBMG8UbSU=" alt="Chapeau Magique" id="magicHat">
+    <img src="https://media.istockphoto.com/id/1217023366/fr/vectoriel/chapeau-magique-de-gryffindor-isol%C3%A9-sur-un-fond-blanc.png?s=612x612&w=0&k=20&c=M5m5NaZgF_X5D1efiTfRfVXnN1lmjVo6OqdBMG8UbSU=" alt="Chapeau Magique" id="magicHat">
   </div>
 </body>
 </html>
