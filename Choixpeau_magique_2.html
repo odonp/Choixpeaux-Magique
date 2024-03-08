@@ -11,19 +11,74 @@
         <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
         </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet">
 
-
-
+    
 
     </head>
+    <style>
+        
+        h1 {
+            font-family: "Jacquarda Bastarda 9", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 300%;
+            color: rgb(221, 173, 15);
+        
+
+            
+        }
+
+        body { 
+        
+            background-image: url("https://rp.attrnum.com/resize/960/0/75/YXJ0aWNsZXMvUFJSS3JPTGwzQ1ltNTdxcGh0RHkvYzEwZTJmNzIyOGRjNGQ4OWI2MTEvMzljMTk5NmEtZGQwMC00ZTJhLWE3NGMtZTljNWExZDgwODA2LnBuZw==/b92d5e4b139f61bf20b7f88eca635e83fc0d97c404a02cfe022a485ecf995c3f/image.jpg") 
+            
+        
+        }
+        p {
+            font-family: "Jacquarda Bastarda 9", serif;
+            color: rgb(221, 173, 15);
+            font-size : 160%
+            
+ 
+        }
+
+        .button
+        {
+            position: relative;
+            display: inline-flex;
+            text-decoration: none;
+            color: #1bc089;
+            background-color: #61440d;
+            padding-left: 0.9rem;
+            padding-right: 0.9rem;
+            overflow: hidden;
+            z-index: 1;
+            align-items: center;
+            box-shadow: 0px 3px 4px -4px rgba(0,0,0,0.75); 
+        }
+        
+        
+        .button_start {
+            transition: background-color 0.3s ease; /* Transition de couleur*/
+            color: #1bc089;
+            background-color: #000000;
+            font-size: 1.2em; /* Augmente la taille du texte du bouton */
+            padding: 5px 15px;
+        }
+
+        .button_start:hover {
+            background-color: #61440d; /* Nouvelle couleur au survol de la souris*/
+        }
+    </style>
     <body onload="brython()">
         <script type="text/python">
 
             from browser import document, html
             import csv
             from math import sqrt
-
-
 
 
 
@@ -65,17 +120,7 @@
                         poudlard_character['House'] = character_HP['House']
                         poudlard_characters.append(poudlard_character)
 
-            
-
-
-
-
-
-            
-
-
-
-
+   
 
 
             indice_question = -1
@@ -205,9 +250,12 @@
         </script>
         
 
-        <h1> <center>  Choixpeau Magique </center> </h1>
+        <h1> <center>  <u>Choixpeau Magique</u> </center> </h1>
+        <br>
+        <center><button id="start"class="button_start"> Démarrer le questionnaire </button></center>
+        
 
-        <button id="start"> Start </button>
+
 
 
         <p id="question">  </p>
@@ -217,12 +265,12 @@
         <button id="reponse_b"></button>
         <br><br>
         <button id="reponse_c"></button>
+        <br> <br>
         
-        <button id="skip"> Passer la question </button>
+        <center><button id="skip" class="button">-> Passer à la prochaine question -></button></center>
 
 
-
-        <p>Votre Maison est : <p id="resultat"> ... </p></p>
+        <p>Vous appartenez à la maison : <p id="resultat"> ... </p></p>
         
     </body>
 </html>
