@@ -14,3 +14,11 @@ INFO pour les dev du groupe
   rédiger les questions/réponses dans Calc avec les pondérations ->donne un fichier csv  
 
   A la fin, afficher la réponse et les 3 plus proches voisins et leur maison
+
+
+
+
+  gryffondor : courage, bonté 
+  serpentard : scinisme, peu de bonté, ambition 
+  serdaigle : forte ambition, intelligence 
+  pousoufle :  bonté, peu d'ambition 
