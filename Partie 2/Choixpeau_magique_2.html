@@ -25,13 +25,7 @@
 
 
 
-
-
-
             profil = {'Courage': 0,'Ambition': 0,'Intelligence': 0,'Good': 0}
-
-
-
 
 
             with open("Question.csv", mode='r', encoding='utf-8') as f:
@@ -64,16 +58,6 @@
                     if poudlard_character['Name'] == character_HP['Name']:
                         poudlard_character['House'] = character_HP['House']
                         poudlard_characters.append(poudlard_character)
-
-            
-
-
-
-
-
-            
-
-
 
 
 
@@ -185,10 +169,7 @@
                 tab_k_plus_proche_voisin = tab_caracteres[:5]
                 
                 return tab_k_plus_proche_voisin
-
-
-            
-        
+ 
            
 
             def maison_profil(persos_proches):
@@ -203,15 +184,6 @@
                 list_maison.sort(key=lambda x: x[1], reverse=True)
 
                 return list_maison[0][0]
-            
-
-            
-
-
-
-
-
-
 
 
         </script>
@@ -219,31 +191,26 @@
 
         <h1> <center>  Choixpeau Magique </center> </h1>
 
-        <button id="start"> Start </button>
 
 
-        <p id="question">  </p>
-        <br><br><br>
-        <button id="reponse_a"></button>
-        <br><br>
-        <button id="reponse_b"></button>
-        <br><br>
-        <button id="reponse_c"></button>
-        
-
-
-
-
-        <p>Votre Maison est : <p id="resultat"> ... </p></p>
-
-        <p id="perso_proche"></p>
-        
-        <p id="perso_proche_1"></p>
-        <p id="perso_proche_2"></p>
-        <p id="perso_proche_3"></p>
-        <p id="perso_proche_4"></p>
-        <p id="perso_proche_5"></p>
-
-        
+        <div class="container">
+            
+            <button id="start"> Démarrer le questionnaire</button>
+            <p id="question"></p>
+            <br><br><br>
+            <button id="reponse_a"></button>
+            <br><br>
+            <button id="reponse_b"></button>
+            <br><br>
+            <button id="reponse_c"></button>
+            <p>Votre Maison est : <span id="resultat">...</span></p>
+            <p id="perso_proche"></p>
+            <p id="perso_proche_1"></p>
+            <p id="perso_proche_2"></p>
+            <p id="perso_proche_3"></p>
+            <p id="perso_proche_4"></p>
+            <p id="perso_proche_5"></p>
+        </div>
     </body>
-</html>
+    
+    </html>
