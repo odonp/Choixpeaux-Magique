@@ -128,21 +128,21 @@
                 global indice_question
                 global question_tab
                 indice_question += 1
-                if indice_question > 6:
+                if indice_question > 8:
                     document['question'].style.display = 'None'
                     document['reponse_a'].style.display = 'None'
                     document['reponse_b'].style.display = 'None'
                     document['reponse_c'].style.display = 'None'
-
-                    maison = maison_profil(k_plus_proche_voisin(poudlard_characters, profil, 5))
+                    maison = maison_profil(k_plus_proche_voisin(poudlard_characters, profil))
                     document["resultat"].textContent = maison
-
                     document['perso_proche'].textContent = "Les 5 personnages les plus proches :"
-                    persos_voisin = k_plus_proche_voisin(poudlard_character, profil, 5)
-                    document["perso_proche_1"].textContent = persos_voisin[0]["Name"] 
+                    persos_voisin = k_plus_proche_voisin(poudlard_characters, profil)
+                    document["perso_proche_1"].textContent = persos_voisin[0]["Name"]
                     document["perso_proche_2"].textContent = persos_voisin[1]["Name"]
                     document["perso_proche_3"].textContent = persos_voisin[2]["Name"]
                     document["perso_proche_4"].textContent = persos_voisin[3]["Name"]
+                    document["perso_proche_5"].textContent = persos_voisin[4]["Name"]
+                    
 
 
 
@@ -170,7 +170,7 @@
 
 
 
-            def k_plus_proche_voisin(tab_caracteres, profil_carateristiques, k):
+            def k_plus_proche_voisin(tab_caracteres, profil_carateristiques):
                 for perso in tab_caracteres:
                     distance = 0
                     somme_carré = 0
@@ -182,7 +182,7 @@
                     perso['Distance'] = distance
 
                 tab_caracteres.sort(key= lambda x: x['Distance'])
-                tab_k_plus_proche_voisin = tab_caracteres[:k]
+                tab_k_plus_proche_voisin = tab_caracteres[:5]
                 
                 return tab_k_plus_proche_voisin
 
@@ -206,7 +206,6 @@
             
 
             
-
 
 
 
