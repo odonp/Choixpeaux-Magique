@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Jacquarda+Bastarda+9&family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Jacquarda+Bastarda+9&family=MedievalSharp&family=Uncial+Antiqua&display=swap');
+
+
 .container {
     background-color: rgba(255, 255, 255, 0.5); 
     border-radius: 10px; 
@@ -11,7 +13,8 @@
 body {
     background-image: url("fond.png");
     background-position: center;
-    background-size: 120%;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,27 +25,40 @@ body {
 p {
     font-size: 34px;
     color: #229091;
+    font-family: "MedievalSharp", cursive;
+    
 }
 
 h1 {
     font-size: 4.2rem;
     font-family: "Uncial Antiqua", system-ui;
     position: absolute; 
-    top: -60px; /* Déplacer de haute en bas le titre*/
+    top: -60px; /* Déplacer de haut en bas le titre*/
     width: 100%; 
     padding: 20px; 
     text-align: center; 
     z-index: 999; /* Pour que le titre soit au dessus de tout -> au dessus du cadre */
 }
 
+h3 { 
+    font-size: 24px;
+    color: #229091;
+    font-family: "Uncial Antiqua", system-ui;
+    
+
+
+}
 
 button {
-    font-family: system-ui, sans-serif;
+    
+    border-radius: 10px 30px 0px 90px;
+    padding: 100px;
+    font-family: "MedievalSharp", cursive;
     font-size: 1rem;
     cursor: pointer;
     padding: .1em .6em;
     font-weight: bold;  
-    border: none;
+    border-style: inset;
     
 
     --c:  #229091; 
@@ -71,4 +87,8 @@ button:active {
     box-shadow: 0 0 9e9q inset #0009; 
     background-color: var(--c);
     color: #fff;
+}
+
+span {
+    color: #cf6f00;
 }
