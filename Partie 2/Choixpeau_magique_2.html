@@ -11,7 +11,7 @@
         <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
         </script>
-
+        
 
 
 
@@ -119,7 +119,7 @@
                     document['reponse_c'].style.display = 'None'
                     maison = maison_profil(k_plus_proche_voisin(poudlard_characters, profil))
                     document["resultat"].textContent = maison
-                    document['perso_proche'].textContent = "Les 5 personnages les plus proches :"
+                    document['perso_proche'].textContent = "Les 5 personnages les plus proches sont:"
                     persos_voisin = k_plus_proche_voisin(poudlard_characters, profil)
                     document["perso_proche_1"].textContent = persos_voisin[0]["Name"]
                     document["perso_proche_2"].textContent = persos_voisin[1]["Name"]
@@ -127,8 +127,6 @@
                     document["perso_proche_4"].textContent = persos_voisin[3]["Name"]
                     document["perso_proche_5"].textContent = persos_voisin[4]["Name"]
                     
-
-
 
 
                     
@@ -195,22 +193,24 @@
 
         <div class="container">
             
-            <button id="start"> Démarrer le questionnaire</button>
+            <button id="start" style="margin: 0 auto; display: block;"> Démarrer le questionnaire</button>
             <p id="question"></p>
-            <br><br><br>
+            <br><br>
             <button id="reponse_a"></button>
             <br><br>
             <button id="reponse_b"></button>
             <br><br>
             <button id="reponse_c"></button>
-            <p>Votre Maison est : <span id="resultat">...</span></p>
-            <p id="perso_proche"></p>
-            <p id="perso_proche_1"></p>
-            <p id="perso_proche_2"></p>
-            <p id="perso_proche_3"></p>
-            <p id="perso_proche_4"></p>
-            <p id="perso_proche_5"></p>
+            <h3>Votre Maison est : <span id="resultat">...</span></h3>
+            <h3 id="perso_proche"></h3>
+            <h3 id="perso_proche_1"></h3>
+            <h3 id="perso_proche_2"></h3>
+            <h3 id="perso_proche_3"></h3>
+            <h3 id="perso_proche_4"></h3>
+            <h3 id="perso_proche_5", > </h3>
+            
         </div>
+        
     </body>
     
 </html>
