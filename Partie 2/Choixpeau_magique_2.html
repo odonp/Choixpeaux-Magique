@@ -125,7 +125,8 @@
                     for i in range(5):
                         document["perso_proche_" + str(i + 1)].textContent = persos_voisin[i]["Name"] + " de la maison " + persos_voisin[i]["House"]
                     
-                    document <= html.IMG(src=maison + ".gif")
+                    document <= html.IMG(src=maison + ".gif", height="120" ,width="80")
+
                     
 
                 document["question"].textContent = questions_tab[indice_question]["Question"]
@@ -188,18 +189,18 @@
 
 
 
-        <section class="container">
+        <section id="container">
             
             <button id="start" style="margin: 0 auto; display: block;"> Démarrer le questionnaire</button>
             <p id="question"></p>
-            
+
             <button id="reponse_a"></button>
-            
+
             <button id="reponse_b"></button>
-            
+
             <button id="reponse_c"></button>
             <h3>Votre Maison est : <span id="resultat">...</span></h3>
-            
+
             <h3 id="perso_proche"></h3>
             <h4 id="perso_proche_1"></h4>
             <h4 id="perso_proche_2"></h4>
@@ -208,7 +209,8 @@
             <h4 id="perso_proche_5"> </h4>
             
         </section>
-        
+
+
     </body>
     
 </html>
