@@ -121,11 +121,8 @@
                     document["resultat"].textContent = maison
                     document['perso_proche'].textContent = "Les 5 personnages les plus proches sont:"
                     persos_voisin = k_plus_proche_voisin(poudlard_characters, profil)
-                    document["perso_proche_1"].textContent = persos_voisin[0]["Name"]
-                    document["perso_proche_2"].textContent = persos_voisin[1]["Name"]
-                    document["perso_proche_3"].textContent = persos_voisin[2]["Name"]
-                    document["perso_proche_4"].textContent = persos_voisin[3]["Name"]
-                    document["perso_proche_5"].textContent = persos_voisin[4]["Name"]
+                    for i in range (5):
+                        document["perso_proche_" + str(i + 1)].textContent = persos_voisin[i]["Name"] + " de la maison " + persos_voisin[i]["House"]
                     
 
 
@@ -183,7 +180,8 @@
 
                 return list_maison[0][0]
 
-
+                
+        
         </script>
         
 
@@ -195,7 +193,7 @@
             
             <button id="start" style="margin: 0 auto; display: block;"> Démarrer le questionnaire</button>
             <p id="question"></p>
-            <br><br>
+            
             <button id="reponse_a"></button>
             <br><br>
             <button id="reponse_b"></button>
@@ -203,11 +201,11 @@
             <button id="reponse_c"></button>
             <h3>Votre Maison est : <span id="resultat">...</span></h3>
             <h3 id="perso_proche"></h3>
-            <h3 id="perso_proche_1"></h3>
-            <h3 id="perso_proche_2"></h3>
-            <h3 id="perso_proche_3"></h3>
-            <h3 id="perso_proche_4"></h3>
-            <h3 id="perso_proche_5", > </h3>
+            <h4 id="perso_proche_1"></h4>
+            <h4 id="perso_proche_2"></h4>
+            <h4 id="perso_proche_3"></h4>
+            <h4 id="perso_proche_4"></h4>
+            <h4 id="perso_proche_5"> </h4>
             
         </div>
         
