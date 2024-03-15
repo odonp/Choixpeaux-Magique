@@ -109,3 +109,9 @@ span {
     margin: auto;
     border: 2px solid #cf6f00;
 }
+
+#reponse_a,
+#reponse_b,
+#reponse_c {
+    display: none;
+}
