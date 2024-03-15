@@ -2,7 +2,7 @@
 
 
 .container {
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.788); 
     border-radius: 10px; 
     padding: 20px; 
     width: 80%; 
@@ -40,6 +40,13 @@ h1 {
     z-index: 999; /* Pour que le titre soit au dessus de tout -> au dessus du cadre */
 }
 
+h4 {
+    font-size: 1.1rem;
+    font-family: "Uncial Antiqua", system-ui;
+    text-align: center; 
+    color: #a85a00;
+}
+
 h3 { 
     font-size: 24px;
     color: #229091;
@@ -59,7 +66,9 @@ button {
     padding: .1em .6em;
     font-weight: bold;  
     border-style: inset;
-    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
 
     --c:  #229091; 
     box-shadow: 0 0 0 .1em inset var(--c); 
