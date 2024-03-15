@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -151,15 +150,25 @@
 
 
             def k_plus_proche_voisin(tab_caracteres, profil_carateristiques):
+                '''
+                Renvoie la table des k plus proche voisins
+        
+                Entrée : Une table contenant des dictionnaires. Chaque dictionnaire correspond à un personnages 
+                d’Harry Potter avec ses 4 caractéristiques et sa maison. 
+                Et Une table contenant un/des dictionnaire(s) avec 4 clés qui sont des caractéristiques 
+                (Courage, Ambition, Intelligence, Good) avec en valeur un entier de 1 à 10.
+                
+                Sortie : Une table avec le nombre de dictionnaire correspondant au nombre des 5 plus proche voisins, avec leurs caractéristiques,
+                leur maison, et leur distance par rapport au profil recherché 
+                '''
+
                 for perso in tab_caracteres:
                     distance = 0
                     somme_carré = 0
                     # Theoreme de pythagore
                     for caracteristique in profil_carateristiques:
                         somme_carré += (int(perso[caracteristique]) - profil_carateristiques[caracteristique]) ** 2
-                    distance = sqrt(somme_carré)
-                    
-                    perso['Distance'] = distance
+                    perso['Distance'] = sqrt(somme_carré)
 
                 tab_caracteres.sort(key= lambda x: x['Distance'])
                 tab_k_plus_proche_voisin = tab_caracteres[:5]
@@ -169,14 +178,20 @@
            
 
             def maison_profil(persos_proches):
+                '''
+                Renvoie une liste de tuple trier afin d'avoir la maison du profil
+            
+                Entrée : liste de dictionnaire des k plus proche voisin 
+                Sortie : liste de tuple contenant la maision et le nombre de personnages des persos proches qui font partie
+                de la maison
+                '''
 
                 dico_maison = {'Gryffindor' : 0, 'Ravenclaw' : 0, 'Slytherin' : 0, 'Hufflepuff' : 0}
                 
                 for perso in persos_proches:
                     dico_maison[perso['House']] += 1
-                    
+
                 list_maison = list(dico_maison.items())
-                
                 list_maison.sort(key=lambda x: x[1], reverse=True)
 
                 return list_maison[0][0]
