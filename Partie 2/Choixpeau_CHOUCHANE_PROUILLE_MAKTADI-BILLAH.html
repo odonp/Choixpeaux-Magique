@@ -125,13 +125,15 @@
                         document["perso_proche_" + str(i + 1)].textContent = persos_voisin[i]["Name"] + " de la maison " + persos_voisin[i]["House"]
                     
                     document["container"] <= html.IMG(src=maison + ".gif", height="100px", width="70px", id="gif")
-
-                    
-
-                document["question"].textContent = questions_tab[indice_question]["Question"]
-                document["reponse_a"].textContent = questions_tab[indice_question]["Reponse A"]
-                document["reponse_b"].textContent = questions_tab[indice_question]["Reponse B"]
-                document["reponse_c"].textContent = questions_tab[indice_question]["Reponse C"]
+                else:
+                    document["question"].textContent = questions_tab[indice_question]["Question"]
+                    document["reponse_a"].textContent = questions_tab[indice_question]["Reponse A"]
+                    document["reponse_b"].textContent = questions_tab[indice_question]["Reponse B"]
+                    document["reponse_c"].textContent = questions_tab[indice_question]["Reponse C"]
+                    # Affiche les boutons de réponse
+                    document['reponse_a'].style.display = 'inline-block'
+                    document['reponse_b'].style.display = 'inline-block'
+                    document['reponse_c'].style.display = 'inline-block'
                 
                 
 
