@@ -4,10 +4,11 @@
 #container {
     background-color: rgba(255, 255, 255, 0.788); 
     border-radius: 10px; 
-    padding: 20px; 
+    padding: 10px; 
     width: 80%; 
     max-width: 600px; 
     margin: 0 auto; 
+    margin-top: 30px;
 }
 
 body {
@@ -100,4 +101,11 @@ button:active {
 
 span {
     color: #cf6f00;
+}
+
+
+#gif {
+    display: block;
+    margin: auto;
+    border: 2px solid #cf6f00;
 }
