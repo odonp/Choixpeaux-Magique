@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Jacquarda+Bastarda+9&family=MedievalSharp&family=Uncial+Antiqua&display=swap');
 
 
-.container {
+#container {
     background-color: rgba(255, 255, 255, 0.788); 
     border-radius: 10px; 
     padding: 20px; 
